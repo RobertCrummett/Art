@@ -1,0 +1,49 @@
+%!PS-Adobe-3.0 EPSG-3.0
+%%BoundingBox: 0 0 100 100
+/bump {
+exch
+aload pop
+3 -1 roll
+dup
+4 1 roll
+add
+3 1 roll
+add
+exch
+2 array astore
+} def
+
+/dilitate {
+exch
+aload pop
+3 -1 roll
+dup
+4 1 roll
+mul
+3 1 roll
+mul
+exch
+2 array astore
+} def
+
+/dir {
+dup
+cos
+exch
+sin
+2 array astore
+} def
+
+/pentstart 40 def
+/pentpart 72 def
+
+3 setlinewidth
+newpath
+pentstart 0 pentpart mul add dir 40 dilitate 50 bump aload pop moveto
+pentstart 1 pentpart mul add dir 40 dilitate 50 bump aload pop lineto
+pentstart 2 pentpart mul add dir 40 dilitate 50 bump aload pop lineto
+pentstart 3 pentpart mul add dir 40 dilitate 50 bump aload pop lineto
+pentstart 4 pentpart mul add dir 40 dilitate 50 bump aload pop lineto
+closepath
+stroke
+%%EOF
