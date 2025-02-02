@@ -1,0 +1,35 @@
+%!PS-Adobe-3.0 EPSF-3.0
+/box {
+newpath
+5 sub
+exch
+5 sub
+exch
+moveto
+0 10 rlineto
+10 0 rlineto
+0 -10 rlineto
+closepath
+gsave 1 1 1 setrgbcolor fill grestore
+0 0 0 setrgbcolor
+stroke
+} def
+
+2 setlinewidth
+newpath
+100 100 moveto
+45 cos 100 mul 45 sin 100 mul rlineto
+45 cos 100 mul -45 sin 100 mul rlineto
+100 0 rlineto
+45 cos 200 mul 45 sin 200 mul rlineto
+1 0 0 setrgbcolor
+stroke
+
+100 100 box
+45 cos 100 mul 100 add 45 sin 100 mul 100 add box
+100 100 2 sqrt div 2 mul add 100 box
+200 100 2 sqrt div 2 mul add 100 box
+200 100 2 sqrt div 3 mul add 45 sin 100 mul 100 add box
+200 100 2 sqrt div 4 mul add 45 sin 200 mul 100 add box
+
+%%EOF
