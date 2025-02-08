@@ -1,0 +1,42 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%BoundingBox: -5 -5 105 105
+%%BeginProlog
+/A 80 def
+/B 70 def
+/arrowhead {         % x0 y0 x1 y1
+    gsave
+        3 -1 roll    % x0 x1 y1 y0
+        sub          % x0 x1 y1-y0
+        3 1 roll     % y1-y0 x0 x1
+        exch sub     % y1-y0 x1-x0
+        atan rotate
+        1 0 0 setrgbcolor
+        0 3 rlineto
+        stroke
+    grestore
+} def
+%%EndProlog
+/Times-Roman-Italic findfont
+6 scalefont setfont
+
+5 5 translate
+0.25 setlinewidth
+newpath -5 0 moveto 95 0 lineto stroke
+newpath 0 -5 moveto 0 95 lineto stroke
+gsave
+    0.5 setlinewidth
+    newpath 0 0 moveto A 3 sub B 3 sub lineto stroke
+    newpath A 3 sub B 3 sub moveto currentpoint A B arrowhead
+grestore
+newpath 0 0 0.75 0 360 arc
+gsave 1 1 1 setrgbcolor fill grestore stroke
+newpath 0 B moveto A B lineto A 0 lineto stroke
+
+newpath -5 B 2 sub moveto (b) show
+newpath A 2 sub -4 moveto (a) show
+newpath 92 -4 moveto (x) show
+newpath -5 91 moveto (y) show
+newpath A 1 add B moveto (\050a,b\051) show
+newpath -5 -5 moveto (O) show
+showpage
+%%EOF
